@@ -9,14 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 file = open('num.txt', 'r')
 
 num = file.read()
-num = int(num)
-num += 1
-num = str(num)
-file.close()
-
-file = open('num.txt', 'w')
-file.write(num)
-file.close()
 
 # variables
 date = ""
@@ -40,6 +32,7 @@ while(i != 3):
     # check date
     if date == sunday:
         url = "https://www.signupgenius.com/go/amherst_spring" + num
+        print(url)
         date = "_test2"
     elif date == tuesday:
         url = "https://www.signupgenius.com/go/amherst_spring" + num + date
@@ -55,19 +48,14 @@ while(i != 3):
     button = driver.find_element_by_xpath(button_xpath).send_keys(' ')
     sumbit = driver.find_element_by_class_name("giantsubmitbutton.rounded.link_cursor").send_keys(' ')
 
-    # fill in first and last name, fill email, then click submit
-
-    # iframe = driver.find_element_by_xpath("//iframe[@name='Dialogue Window']")
-    # driver.switch_to.frame(iframe)
-
-    WebDriverWait(driver, 1000)
+    # WebDriverWait(driver, 1000)
     #.until(EC.presence_of_element_located((By.ID, "firstname"))
 
     wait = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, "firstname")))
-    fill_first_name = driver.find_element_by_id('firstname').send_keys("Claire")
-    fill_last_name = driver.find_element_by_xpath(last_xpath).send_keys("Jensen")
-    fill_email = driver.find_element_by_xpath(email_xpath).send_keys("cjensen24@amherst.edu")
+    fill_first_name = driver.find_element_by_id('firstname').send_keys("test2")
+    fill_last_name = driver.find_element_by_xpath(last_xpath).send_keys("testing3")
+    fill_email = driver.find_element_by_xpath(email_xpath).send_keys("test1256@gmail.com")
     fill_email = driver.find_element_by_name('btnSignUp').send_keys(' ')
 
     # go back to main page
@@ -78,6 +66,11 @@ while(i != 3):
 driver.quit()
 
 # increase num every week
+num = int(num)
 num += 1
+num = str(num)
+file.close()
 
+file = open('num.txt', 'w')
+file.write(num)
 file.close()
