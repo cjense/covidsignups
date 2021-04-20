@@ -6,8 +6,19 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+file = open('num.txt', 'r')
+
+num = file.read()
+num = int(num)
+num += 1
+num = str(num)
+file.close()
+
+file = open('num.txt', 'w')
+file.write(num)
+file.close()
+
 # variables
-num = "11"
 date = ""
 sunday = ""
 tuesday = "_test2"
@@ -68,3 +79,5 @@ driver.quit()
 
 # increase num every week
 num += 1
+
+file.close()
