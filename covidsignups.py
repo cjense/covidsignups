@@ -16,6 +16,7 @@ sunday = ""
 tuesday = "_test2"
 thursday = "_test3"
 url = "https://www.signupgenius.com/go/amherst_spring" + num
+print(url)
 i = 0
 
 # xpath variables
@@ -53,9 +54,9 @@ while(i != 3):
 
     wait = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.ID, "firstname")))
-    fill_first_name = driver.find_element_by_id('firstname').send_keys("test2")
-    fill_last_name = driver.find_element_by_xpath(last_xpath).send_keys("testing3")
-    fill_email = driver.find_element_by_xpath(email_xpath).send_keys("test1256@gmail.com")
+    fill_first_name = driver.find_element_by_id('firstname').send_keys("Claire")
+    fill_last_name = driver.find_element_by_xpath(last_xpath).send_keys("Jensen")
+    fill_email = driver.find_element_by_xpath(email_xpath).send_keys("cjensen24@amherst.edu")
     fill_email = driver.find_element_by_name('btnSignUp').send_keys(' ')
 
     # go back to main page
