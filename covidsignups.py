@@ -11,10 +11,10 @@ file = open('num.txt', 'r')
 num = file.read()
 
 # variables
-date = ""
+date = "_tuesday"
 sunday = ""
-tuesday = "_test2"
-thursday = "_test3"
+tuesday = "_tuesday"
+thursday = "_thursday"
 url = "https://www.signupgenius.com/go/amherst_spring" + num
 print(url)
 i = 0
@@ -34,10 +34,10 @@ while(i != 3):
     if date == sunday:
         url = "https://www.signupgenius.com/go/amherst_spring" + num
         print(url)
-        date = "_test2"
+        date = "_tuesday"
     elif date == tuesday:
         url = "https://www.signupgenius.com/go/amherst_spring" + num + date
-        date = "_test3"
+        date = "_thursday"
     elif date == thursday:
         url = "https://www.signupgenius.com/go/amherst_spring" + num + date
         date = ""
