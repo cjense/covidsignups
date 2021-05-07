@@ -11,7 +11,7 @@ file = open('num.txt', 'r')
 num = file.read()
 
 # variables
-date = "_tuesday"
+date = ""
 sunday = ""
 tuesday = "_tuesday"
 thursday = "_thursday"
